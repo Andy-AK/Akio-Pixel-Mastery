@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=DM Sans:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ------------------- */
@@ -23,6 +23,7 @@
             --color-border: #E5E5E5;
 
             --font-main: 'Inter', sans-serif;
+            --font-heading: 'DM Sans', sans-serif;
             --transition-smooth: 0.3s ease-in-out;
         }
 
@@ -54,7 +55,13 @@
             display: block;
         }
 
-        h1, h2, h3, .logo, .main-nav a, button, .btn {
+        h1, h2, h3, .logo {
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .main-nav a, button, .btn {
             font-family: var(--font-main);
             text-transform: uppercase;
             font-weight: 500;
@@ -275,6 +282,7 @@
         }
         :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
     </style>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
@@ -288,8 +296,6 @@
                     <li><a href="#services">SERVICES</a></li>
                     <li><a href="#portfolio">PORTFOLIO</a></li>
                     <li><a href="#beforeafter">BEFORE/AFTER</a></li>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
             
@@ -309,7 +315,7 @@
                 <p class="subtitle">RETOUCHING</p>
                 <div class="hero-ctas">
                     <a href="#portfolio" class="btn btn-primary">VIEW PORTFOLIO</a>
-                    <a href="#contact" class="btn btn-secondary">GET A QUOTE</a>
+                    <a href="#services" class="btn btn-secondary">GET A QUOTE</a>
                 </div>
                 <div class="turnaround-badge">24–72H TURNAROUNDS</div>
             </div>
@@ -319,10 +325,12 @@
             <div class="container">
                 <h2 class="reveal">SERVICES</h2>
                 <div class="services-grid">
-                    <div class="service-card reveal"><h3>BEAUTY & FASHION</h3><p>Безупречная кожа с сохранением текстуры, чистка волос, коррекция формы и цвета для эдиториал-качества.</p></div>
-                    <div class="service-card reveal"><h3>PRODUCT & COSMETICS</h3><p>Улучшение текстуры, удаление дефектов, цветокоррекция и создание композиций для каталогов и рекламы.</p></div>
-                    <div class="service-card reveal"><h3>E-COMMERCE</h3><p>Удаление фона, создание теней, цветовая консистентность для профессионального вида ваших товаров онлайн.</p></div>
-                    <div class="service-card reveal"><h3>COLOR GRADING</h3><p>Точная и креативная цветокоррекция для создания настроения и единого стиля во всей съемочной серии.</p></div>
+                    <div class="service-card reveal"><h3>FASHION & BEAUTY</h3><p>Flawless skin with preserved texture, hair cleanup, shape and color correction for editorial quality.</p></div>
+                    <div class="service-card reveal"><h3>PRODUCT & COSMETICS</h3><p>Texture enhancement, defect removal, color work and composition cleanup for catalogs and ads.</p></div>
+                    <div class="service-card reveal"><h3>E-COMMERCE</h3><p>Background removal, realistic shadows, and color consistency for professional online product images.</p></div>
+                    <div class="service-card reveal"><h3>COMPOSITING</h3><p>Complex image assembly, masking, shadows and reflections, seamless realism.</p></div>
+                    <div class="service-card reveal"><h3>PHOTO MANIPULATION</h3><p>Creative alterations, object replacement, scene extensions and style matching.</p></div>
+                    <div class="service-card reveal"><h3>AI-ENHANCED VISUALS</h3><p>Using Ai for generating concepts, backgrounds, or full compositions integrated with manual retouching.</p></div>
                 </div>
             </div>
         </section>
@@ -331,12 +339,12 @@
             <div class="container">
                 <h2 class="reveal">PORTFOLIO</h2>
                 <div class="portfolio-grid">
-                    <a href="#contact" class="portfolio-item reveal"><img src="https://images.unsplash.com/photo-1588624146333-333c53982f_5b?q=80&w=1887&auto=format&fit=crop" alt="Editorial beauty portrait"></a>
-                    <a href="#contact" class="portfolio-item reveal"><img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=2069&auto=format&fit=crop" alt="Clean product shot of a chair"></a>
-                    <a href="#contact" class="portfolio-item reveal"><img src="https://images.unsplash.com/photo-1596432152353-8475289658b1?q=80&w=1887&auto=format&fit=crop" alt="Fashion model in a dynamic pose"></a>
-                    <a href="#contact" class="portfolio-item reveal"><img src="https://images.unsplash.com/photo-1627462942436-02182b31525a?q=80&w=1887&auto=format&fit=crop" alt="Cosmetic products arranged neatly"></a>
-                    <a href="#contact" class="portfolio-item reveal"><img src="https://images.unsplash.com/photo-1581338834902-b2a1a8c513e9?q=80&w=1887&auto=format&fit=crop" alt="Close up on a model's face"></a>
-                    <a href="#contact" class="portfolio-item reveal"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1999&auto=format&fit=crop" alt="Luxury watch product shot"></a>
+                    <a href="#services" class="portfolio-item reveal"><img src="https://images.unsplash.com/photo-1588624146333-333c53982f_5b?q=80&w=1887&auto=format&fit=crop" alt="Editorial beauty portrait"></a>
+                    <a href="#services" class="portfolio-item reveal"><img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=2069&auto=format&fit=crop" alt="Clean product shot of a chair"></a>
+                    <a href="#services" class="portfolio-item reveal"><img src="https://images.unsplash.com/photo-1596432152353-8475289658b1?q=80&w=1887&auto=format&fit=crop" alt="Fashion model in a dynamic pose"></a>
+                    <a href="#services" class="portfolio-item reveal"><img src="https://images.unsplash.com/photo-1627462942436-02182b31525a?q=80&w=1887&auto=format&fit=crop" alt="Cosmetic products arranged neatly"></a>
+                    <a href="#services" class="portfolio-item reveal"><img src="https://images.unsplash.com/photo-1581338834902-b2a1a8c513e9?q=80&w=1887&auto=format&fit=crop" alt="Close up on a model's face"></a>
+                    <a href="#services" class="portfolio-item reveal"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1999&auto=format&fit=crop" alt="Luxury watch product shot"></a>
                 </div>
             </div>
         </section>
@@ -351,47 +359,8 @@
             </div>
         </section>
 
-        <section id="about">
-            <div class="container">
-                <h2 class="reveal">PROCESS & TOOLS</h2>
-                <div class="about-grid">
-                    <div class="workflow reveal">
-                        <h3>WORKFLOW</h3>
-                        <ol>
-                            <li><h3>BRIEF & REFERENCES</h3><p>Мы начинаем с детального обсуждения вашей задачи и референсов для полного понимания видения.</p></li>
-                            <li><h3>TEST & ESTIMATE</h3><p>Я делаю тестовую ретушь для утверждения стиля, после чего предоставляю оценку и сроки.</p></li>
-                            <li><h3>RETOUCH & REVIEW</h3><p>Основной этап работы с использованием неразрушающих техник. Вы получаете превью для обратной связи.</p></li>
-                            <li><h3>FINAL DELIVERY</h3><p>После вашего полного утверждения, вы получаете финальные файлы в нужном формате (TIFF, PSD, JPG).</p></li>
-                        </ol>
-                    </div>
-                    <div class="tools-and-testimonials reveal">
-                        <h3>TOOLS</h3>
-                        <ul class="tools-list"><li>ADOBE PHOTOSHOP</li><li>CAPTURE ONE PRO</li><li>WACOM INTUOS PRO</li><li>COLOR MANAGEMENT</li></ul>
-                        <div class="testimonial"><blockquote>“Внимание Akio к деталям не имеет себе равных. Текстура кожи всегда выглядит естественно. Настоящий профессионал.”</blockquote><figcaption>— CHLOE DAVIS, FASHION PHOTOGRAPHER, PARIS</figcaption></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contact">
-            <div class="container">
-                <h2 class="reveal">CONTACT</h2>
-                <div class="contact-layout">
-                    <form id="contact-form" class="reveal">
-                        <div class="form-group"><input type="text" id="name" name="name" placeholder="ИМЯ" required></div>
-                        <div class="form-group"><input type="email" id="email" name="email" placeholder="EMAIL" required></div>
-                        <div class="form-group"><textarea id="message" name="message" rows="5" placeholder="ДЕТАЛИ ПРОЕКТА" required></textarea></div>
-                        <button type="submit" class="btn form-submit-btn">ОТПРАВИТЬ</button>
-                    </form>
-                    <div class="contact-sidebar reveal">
-                        <h3>INFO</h3>
-                        <p><strong>EMAIL:</strong> <a href="mailto:contact@akiopixel.com">contact@akiopixel.com</a></p>
-                        <p><strong>TIMEZONE:</strong> CENTRAL EUROPEAN TIME (CET)</p>
-                        <ul class="social-links"><li><a href="#" target="_blank">BEHANCE</a></li><li><a href="#" target="_blank">INSTAGRAM</a></li></ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+
     </main>
 
     <footer class="main-footer">
