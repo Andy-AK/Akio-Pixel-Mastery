@@ -309,15 +309,17 @@
 
     <main>
         <!-- Разделы страницы -->
-        <section id="home">
-            <div class="hero-content reveal">
-                <h1>AKIO PIXEL MASTERY</h1>
-                <p class="subtitle">RETOUCHING</p>
-                <div class="hero-ctas">
-                    <a href="#portfolio" class="btn btn-primary">VIEW PORTFOLIO</a>
-                    <a href="#services" class="btn btn-secondary">GET A QUOTE</a>
+        <section id="home" class="hero">
+            <div class="hero__content">
+                <div>
+                    <h1>AKIO PIXEL MASTERY</h1>
+                    <div class="subtitle">RETOUCHING</div>
+                    <div class="btns">
+                        <a class="btn" href="#portfolio">VIEW PORTFOLIO</a>
+                        <a class="btn" href="#quote">GET A QUOTE</a>
+                    </div>
+                    <div class="note">24–72H TURNAROUNDS</div>
                 </div>
-                <div class="turnaround-badge">24–72H TURNAROUNDS</div>
             </div>
         </section>
 
@@ -366,6 +368,23 @@
     <footer class="main-footer">
         <p>&copy; <span id="current-year"></span> AKIO PIXEL MASTERY. <a href="#home">BACK TO TOP</a></p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+    <script>
+      let vanta;
+      window.addEventListener('DOMContentLoaded', () => {
+        vanta = VANTA.FOG({
+          el: "#home",
+          mouseControls: true, touchControls: true, gyroControls: false,
+          minHeight: 200, minWidth: 200,
+          highlightColor: 0xd2ccbc, midtoneColor: 0xbeab9b,
+          lowlightColor: 0x92a0af, baseColor: 0xfff9eb,
+          blurFactor: 0.54, zoom: 1, speed: 1
+        });
+      });
+      window.addEventListener('beforeunload', () => vanta?.destroy?.());
+    </script>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
