@@ -212,13 +212,17 @@
         .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-smooth); }
         .portfolio-item:hover img { transform: scale(1.03); }
         #beforeafter { background-color: var(--color-secondary-bg); }
-        .ba-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
-        .ba-item { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid var(--color-border); background-color: #eee; }
+        .ba-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(675px, 1fr)); gap: 20px; }
+        .ba-item { position: relative; aspect-ratio: 3 / 2; overflow: hidden; border: 1px solid var(--color-border); background-color: #eee; }
         .ba-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity var(--transition-smooth); }
-        .ba-item .ba-before-img { opacity: 0; }
+        .ba-item .ba-before-img { opacity: 0; z-index: 1; }
+        .ba-item .ba-after-img { z-index: 0; }
         .ba-item:hover .ba-before-img { opacity: 1; }
         .ba-item::after { content: 'BEFORE'; position: absolute; top: 10px; right: 10px; background-color: rgba(0,0,0,0.5); color: white; padding: 4px 8px; font-size: 0.7rem; letter-spacing: 1px; opacity: 0; transition: opacity var(--transition-smooth); pointer-events: none; }
         .ba-item:hover::after { opacity: 1; }
+        .ba-slider { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 80%; height: 6px; background: rgba(255,255,255,0.5); border-radius: 3px; outline: none; -webkit-appearance: none; }
+        .ba-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; background: var(--color-accent); border-radius: 50%; cursor: pointer; }
+        .ba-slider::-moz-range-thumb { width: 20px; height: 20px; background: var(--color-accent); border-radius: 50%; cursor: pointer; border: none; }
         .about-grid { display: grid; gap: 60px; }
         .workflow ol { list-style: none; counter-reset: workflow-counter; }
         .workflow li { position: relative; padding-left: 50px; margin-bottom: 30px; }
@@ -355,8 +359,10 @@
             <div class="container">
                 <h2 class="reveal">BEFORE/AFTER</h2>
                 <div class="ba-grid">
-                    <div class="ba-item reveal"><img src="https://images.unsplash.com/photo-1542328523-96941183f2a8?q=80&w=2500&auto=format=fit&crop&dpr=1&bri=-20&con=-20" alt="Оригинальное изображение" class="ba-image ba-before-img"><img src="https://images.unsplash.com/photo-1542328523-96941183f2a8?q=80&w=2500&auto=format=fit&crop" alt="Отретушированное изображение" class="ba-image ba-after-img"></div>
-                    <div class="ba-item reveal"><img src="https://images.unsplash.com/photo-1597589827317-4c6d6e0a90ce?q=80&w=2000&auto=format=fit&crop&bri=-15&con=-10" alt="Оригинальное изображение" class="ba-image ba-before-img"><img src="https://images.unsplash.com/photo-1597589827317-4c6d6e0a90ce?q=80&w=2000&auto=format=fit&crop" alt="Отретушированное изображение" class="ba-image ba-after-img"></div>
+                    <div class="ba-item reveal"><img src="Before-After/01_Parfume-Before.jpg" alt="Before image" class="ba-image ba-before-img"><img src="Before-After/01_Parfume-After.jpg" alt="After image" class="ba-image ba-after-img"><input type="range" min="0" max="100" value="0" class="ba-slider"></div>
+                    <div class="ba-item reveal"><img src="Before-After/02_Watch-Before.jpg" alt="Before image" class="ba-image ba-before-img"><img src="Before-After/02_Watch-After.jpg" alt="After image" class="ba-image ba-after-img"><input type="range" min="0" max="100" value="0" class="ba-slider"></div>
+                    <div class="ba-item reveal"><img src="Before-After/03_Jeep-Sunset-Before.jpg" alt="Before image" class="ba-image ba-before-img"><img src="Before-After/03_Jeep-Sunset-After.jpg" alt="After image" class="ba-image ba-after-img"><input type="range" min="0" max="100" value="0" class="ba-slider"></div>
+                    <div class="ba-item reveal"><img src="Before-After/04_Lexus-Before.jpg" alt="Before image" class="ba-image ba-before-img"><img src="Before-After/04_Lexus-After.jpg" alt="After image" class="ba-image ba-after-img"><input type="range" min="0" max="100" value="0" class="ba-slider"></div>
                 </div>
             </div>
         </section>
@@ -425,6 +431,17 @@
         }
 
         document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Before/After sliders
+        const sliders = document.querySelectorAll('.ba-slider');
+        sliders.forEach(slider => {
+            slider.addEventListener('input', (e) => {
+                const value = e.target.value;
+                const baItem = e.target.closest('.ba-item');
+                const beforeImg = baItem.querySelector('.ba-before-img');
+                beforeImg.style.opacity = value / 100;
+            });
+        });
     });
     </script>
 </body>
