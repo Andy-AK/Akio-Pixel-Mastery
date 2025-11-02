@@ -257,32 +257,33 @@
         
         @media (max-width: 899px) {
             .main-nav {
-                position: fixed; 
+                position: fixed;
                 top: 0;
-                left: 0; 
+                left: 0;
                 width: 100vw;
                 height: 100vh;
-                background: var(--color-bg); 
+                background: var(--color-bg);
                 transform: translateX(100%);
-                opacity: 0; 
-                visibility: hidden; 
+                opacity: 0;
+                visibility: hidden;
                 transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
                 z-index: 1001;
             }
-            .main-nav.is-open { 
-                transform: translateX(0); 
-                opacity: 1; 
-                visibility: visible; 
+            .main-nav.is-open {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
             }
-            .main-nav ul { 
-                display: flex; 
-                flex-direction: column; 
-                justify-content: center; 
-                align-items: center; 
-                height: 100%; 
+            .main-nav ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
                 gap: 20px;
             }
             .main-nav li a { font-size: 1.3rem; }
+            .ba-grid { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
         }
         :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
     </style>
